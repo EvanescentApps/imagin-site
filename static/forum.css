@@ -1,0 +1,112 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    margin-top: 30px;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenu au-dessus de la vidéo */
+.content {
+    position: relative;
+    z-index: 1;
+    color: white; /* Texte en blanc pour contraster */
+}
+
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-body {
+    background-color: white;
+    padding: 20px;
+    border: 0px solid #ddd;
+    border-radius: 0 0 8px 8px;
+}
+
+.post {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post .user {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.post .timestamp {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.post .content {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.post-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.post-button:hover {
+    background-color: #0056b3;
+}
+
+.input-post {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+}
+
+.input-post textarea {
+    width: 100%;
+    padding: 10px;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.input-post button {
+    float: right;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.input-post button:hover {
+    background-color: #0056b3;
+}

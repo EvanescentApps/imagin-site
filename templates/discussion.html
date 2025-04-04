@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ discussion.title }}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}">
+
+<style>   .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+            /* Ensure it's above other content */
+        }</style>
+</head>
+
+<body>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="{{ url_for('static', filename='nature.mp4') }}" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+    </div>
+
+        <a href="/" class="btn btn-secondary back-button">Retour à l'accueil</a>
+
+    <div class="container">
+
+        
+        <!-- Forum Header -->
+        <div class="text-center mb-5">
+            <h1 class="display-4" style="     color: white; /* Texte en blanc pour contraster */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">Forum de Discussion</h1>
+            <p style="     color: white; /* Texte en blanc pour contraster */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);"><b>Participez aux échanges et posez vos questions sur divers sujets techniques et de gestion de projet.</b></p>
+        </div>
+
+
+
+        <!-- Forum Topic -->
+        <div class="card rounded-lg mb-4"  style="border: 0px; ">
+            <div class="card-header" >
+                Discussion sur le Projet "Aménagement d'un Dragon Glouton aux Pyramides d'Evry"
+            </div>
+            <div class="card-body">
+
+                <!-- Posts Section -->
+                <div class="container mt-4">
+    <h2 class="text-center">Aménagement d'un Dragon Glouton aux Pyramides d'Evry
+</h2>
+    <p class="text-center">Échangez vos idées et collaborez sur le projet.</p>
+    
+    <div class="post border p-3 mb-3 rounded shadow-sm">
+        <div class="user fw-bold">Gustave</div>
+        <div class="timestamp text-muted small">Publié le 2 avril 2025</div>
+        <div class="content mt-2">
+              <p>A publié une proposition de projet: "Aménagement d'un dragon glouton"</p>
+             <div class="row">
+        <div class="col-md-2">
+            <img src="{{ url_for('static', filename='coquibus.jpeg') }}" class="img-fluid rounded" alt="Aménagement d'un dragon glouton" style="max-height: 150px;">
+        </div>
+        <div class="col-md-9">
+            <p class="card-text text-muted" style="margin-left: -0.6rem;">Encourager les citoyens à ne pas laisser les déchets
+au sol et améliorer la propreté des espaces publics
+en utilisant une œuvre artistique, ludique
+et attrayante qu’est le Dragon glouton.<br>
+Porteur de projet : Maurice M.
+Coût approximatif : entre 20 000 et 25 000 €</p>
+        </div>
+    </div>
+          
+        </div>
+    </div>
+
+
+    <div class="post border p-3 mb-3 rounded shadow-sm">
+        <div class="user fw-bold">Godefroy</div>
+        <div class="timestamp text-muted small">Publié le 2 avril 2025</div>
+        <div class="content mt-2">
+            <p>Super idée ! J'avais une idée similaire à plus petite échelle où les œuvres étaient des poubelles en soi. Je voulais faire ça dans les rues avec des crocodiles.</p>
+        </div>
+    </div>
+
+    <div class="post border p-3 mb-3 rounded shadow-sm">
+        <div class="user fw-bold">Gustave</div>
+        <div class="timestamp text-muted small">Publié le 2 avril 2025</div>
+        <div class="content mt-2">
+            <p>Veux-tu qu'on rejoigne nos projets afin de travailler ensemble ?</p>
+        </div>
+    </div>
+
+    <div class="post border p-3 mb-3 rounded shadow-sm">
+        <div class="user fw-bold">Godefroy</div>
+        <div class="timestamp text-muted small">Publié le 2 avril 2025</div>
+        <div class="content mt-2">
+            <p>C'est vrai qu'on pourrait mettre un système de collecte dans le dragon glouton afin de récupérer les déchets et de permettre aux utilisateurs de jeter les déchets dans sa bouche. Mais je n'ai pas envie de m'investir tant que ça. Je veux bien qu'on travaille ensemble.</p>
+        </div>
+    </div>
+</div>
+
+
+                <!-- Input New Post -->
+                <div class="input-post">
+                    <h5>Répondez à cette discussion :</h5>
+                    <textarea placeholder="Écrivez votre réponse ici..."></textarea>
+                    <button>Poster</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

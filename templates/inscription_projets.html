@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Projets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Contenu au-dessus de la vidéo */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: black;
+            /* Texte en blanc pour contraster */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop playsinline preload="metadata">
+            <source src="{{ url_for('static', filename='nature.mp4') }}" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+    </div>
+
+    <a href="/" class="btn btn-secondary back-button">Retour à l'accueil</a>
+
+
+    <div class="content container mt-5">
+        <h1 class="text-center" style="color: white; text-shadow: 2px 2px 4px #000000;">Inscription Projets</h1>
+        <p class="text-center" style="color: white; text-shadow: 2px 2px 4px #000000;">Proposez de nouveaux projets innovants et collaborez avec d'autres membres pour les concrétiser.</p>
+        
+        <div class="card shadow rounded-lg mt-4">
+            <div class="card-body">
+                <h2 class="card-title">Directives pour soumettre un projet :</h2>
+                <ul class="list-unstyled">
+                    <li>✅ Le projet doit avoir un impact positif sur la ville et ses habitants.</li>
+                    <li>🧑‍🤝‍🧑 Une équipe ou une personne doit être désignée comme responsable du projet.</li>
+                    <li>💰 Le budget estimatif du projet doit être précisé.</li>
+                    <li>📝 Une description claire et détaillée du projet est requise.</li>
+                    <li> 🛠️ Indiquer les ressources nécessaires et les étapes clés du projet.</li>
+                    <li> 📊 Décrire comment le projet sera mis en œuvre et évalué.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="mt-4"style="color: white; text-shadow: 2px 2px 4px #000000;">Soumettre un projet</h2>
+        <form class="border p-4 rounded shadow bg-light">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" class="form-control" id="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" class="form-control" id="telephone" required>
+            </div>
+            <div class="form-group">
+                <label for="ville">Ville / Adresse</label>
+                <input type="text" class="form-control" id="ville" required>
+            </div>
+            <div class="form-group">
+                <label for="nom_projet">Nom du Projet</label>
+                <input type="text" class="form-control" id="nom_projet" required>
+            </div>
+            <div class="form-group">
+                <label for="descriptif">Descriptif du Projet</label>
+                <textarea class="form-control" id="descriptif" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="lieu_projet">Lieu du Projet</label>
+                <input type="text" class="form-control" id="lieu_projet" required>
+            </div>
+            <div class="form-group">
+                <label for="prix_projet">Prix du Projet (€)</label>
+                <input type="number" class="form-control" id="prix_projet" required>
+            </div>
+            <div class="form-group">
+                <label for="impact_ville">Ce que va apporter ce projet à la ville</label>
+                <textarea class="form-control" id="impact_ville" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Première candidature ?</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="premiere_candidature" id="oui" value="oui" required>
+                    <label class="form-check-label" for="oui">Oui</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="premiere_candidature" id="non" value="non" required>
+                    <label class="form-check-label" for="non">Non</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Soumettre le Projet</button>
+        </form>
+    </div>
+</body>
+</html>

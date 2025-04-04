@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Vidéo en arrière-plan */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Contenu au-dessus de la vidéo */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white; /* Texte en blanc pour contraster */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+       
+        .card {
+            background: rgba(0, 0, 0, 0.1); /* Fond semi-transparent */
+            backdrop-filter: blur(10px); /* Effet de flou */
+            -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
+            border-radius: 18px; /* Coins arrondis */
+            color: white; /* Texte en blanc */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure subtile */
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* Effet au survol */
+        .card:hover {
+            background: rgba(0, 0, 0, 0.3); /* Légèrement plus opaque */
+            backdrop-filter: blur(15px); /* Augmente le flou */
+            -webkit-backdrop-filter: blur(15px);
+            transform: scale(1.05); /* Légère mise en avant */
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Ombre douce */
+        }
+        .card-img-top {
+            border-radius: 14px; /* Coins arrondis pour l'image */
+            margin: 1rem; /* Pas de padding */
+            max-height: 200px;
+            object-fit: cover;
+            width: calc(100% - 2rem);        
+        }
+        
+        a {
+            text-decoration: none;
+            color: white; /* Optional: set the link color to white */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop playsinline preload="metadata">
+            <source src="{{ url_for('static', filename='nature.mp4') }}" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+    </div>
+    <div class="container mt-5 content">
+        <h1 class="text-center mb-4">Plateforme Budget Participatif</h1>
+        
+
+        <div class="row">
+            <div class="col-md-6 col-lg-6 mb-4">
+                <a href="/forum">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='team.jpg') }}" class="card-img-top" alt="Forum">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="bi bi-chat-dots"></i> Forum de discussion</h5>
+                        <p class="card-text">Participez aux échanges et posez vos questions sur divers sujets techniques et de gestion de projet.</p>
+                        <p class="card-text"><strong>Derniers sujets :</strong></p>
+                        <ul class="list-unstyled">
+                            <li>📌 Comment structurer un projet en équipe ?</li>
+                            <li>📌 Les meilleures pratiques en développement agile</li>
+                            <li>📌 Conseils pour réussir une soutenance de projet</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-4">
+                <a href="/inscription-projets">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='project.jpg') }}" class="card-img-top" alt="Inscription Projets">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="bi bi-pencil-square"></i> Inscription Projets</h5>
+                        <p class="card-text">Proposez de nouveaux projets innovants et collaborez avec d'autres membres pour les concrétiser.</p>
+                        <p class="card-text"><strong>Projets récents :</strong></p>
+                        <ul class="list-unstyled">
+                            <li>✅ Application mobile de gestion de tâches</li>
+                            <li>✅ Plateforme de e-learning open-source</li>
+                            <li>✅ Système de recommandation pour livres</li>
+                        </ul>
+                    </div>
+                </div>
+                </a>    
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-6 mb-4">
+                <a href="/anciens-projets">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='archive.jpg') }}" class="card-img-top" alt="Anciens Projets">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="bi bi-folder-check"></i> Anciens Projets</h5>
+                        <p class="card-text">Découvrez les projets déjà réalisés ou ceux qui n'ont pas encore vu le jour.</p>
+                        <p class="card-text"><strong>Exemples :</strong></p>
+                        <ul class="list-unstyled">
+                            <li>🟢 Application de gestion d'événements (réalisé)</li>
+                            <li>🔴 Chatbot IA pour support technique (abandonné)</li>
+                            <li>🟡 Plateforme de mise en relation freelance (en attente)</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-4">
+                <a href="/votes">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='vote.jpg') }}" class="card-img-top" alt="Votes & Présentation">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="bi bi-bar-chart-line"></i> Votes & Présentation</h5>
+                        <p class="card-text">Votez pour les projets les plus prometteurs et participez à leur présentation.</p>
+                        <p class="card-text"><strong>Projets en vote :</strong></p>
+                        <ul class="list-unstyled">
+                            <li>📊 Réseau social éthique et sécurisé</li>
+                            <li>📊 Solution domotique open-source</li>
+                            <li>📊 Outil d'analyse des fake news</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            </div>
+        </div>
+        
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
