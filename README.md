@@ -23,21 +23,23 @@ Le site **imagin** propose une plateforme interactive permettant aux utilisateur
 
 ### Installation avec Docker
 
-    1. Clonez le dépôt :
-        ```bash
-        git clone https://github.com/EvanescentApps/imagin-site
-        ```
-    2. Construisez l’image Docker :
-        ```bash
-        cd imagin
-        docker build -t imagin-site .
-        ```
-    3. Lancez le conteneur :
-        ```bash
-        docker run -p 3000:3000 imagin-site
-        ```
+1. Clonez le dépôt :
+    ```bash
+    git clone https://github.com/EvanescentApps/imagin-site
+    ```
+    
+2. Construisez l’image Docker :
+    ```bash
+    cd imagin
+    docker build -t imagin-site .
+    ```
 
-    Le site sera accessible sur [http://localhost:3000](http://localhost:3000).7
+3. Lancez le conteneur :
+    ```bash
+    docker run -p 3000:3000 imagin-site
+    ```
+
+Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
 
 ### Structure du projet
 
