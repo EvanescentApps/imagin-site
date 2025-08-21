@@ -1,5 +1,6 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-slim-buster
+FROM python:3.11
+RUN pip install --upgrade pip
 
 # Set the working directory to /app
 WORKDIR /app
